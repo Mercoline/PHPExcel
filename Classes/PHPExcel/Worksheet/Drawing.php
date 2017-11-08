@@ -65,6 +65,7 @@ class PHPExcel_Worksheet_Drawing extends PHPExcel_Worksheet_BaseDrawing implemen
     {
         $fileName = $this->getFilename();
         $fileName = str_replace(' ', '_', $fileName);
+        $fileName = md5($fileName);
         return str_replace('.' . $this->getExtension(), '', $fileName) . $this->getImageIndex() . '.' . $this->getExtension();
     }
 
